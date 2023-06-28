@@ -35,4 +35,4 @@ document.addEventListener("keyup", event => {
 	}
 });
 
-openList(1);
+openList(0);
