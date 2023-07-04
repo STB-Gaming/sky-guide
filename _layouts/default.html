@@ -6,6 +6,9 @@ layout: null
 <head>
 	<link rel="stylesheet" href="{{site.url}}/assets/css/sky.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	{% for css in page.css %}
+	<link rel="stylesheet" href="{{site.url}}/assets/css/{{css}}">
+	{% endfor %}
 </head>
 
 <body>
@@ -17,13 +20,15 @@ layout: null
 				<label for="sky_logo">guide</label>
 			</div>
 			{% if page.home %}
-			{% for link in site.data.nav %}
-			<a href="{% if link.local %}{{site.url}}{% endif %}{{link.url}}"
-				class="header-item  {% if page.url contains link.url %}active{% endif %}">
-				<img src="{{site.url}}{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
-				<label for="{{link.rel}}-logo">{{link.title}}</label>
-			</a>
-			{% endfor %}
+			<nav>
+				{% for link in site.data.nav %}
+				<a href="{% if link.local %}{{site.url}}{% endif %}{{link.url}}"
+					class="header-item  {% if page.url contains link.url %}active{% endif %}">
+					<img src="{{site.url}}{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
+					<label for="{{link.rel}}-logo">{{link.title}}</label>
+				</a>
+				{% endfor %}
+			</nav>
 			{% else %}
 			<div class="page-title">
 				{% if page.time %}
@@ -55,6 +60,9 @@ layout: null
 
 	<script src="https://tumble1999.github.io/sky-games/assets/js/menu.js"></script>
 	<script src="{{site.url}}/assets/js/script.js"></script>
+	{% for js in page.js %}
+	<script src="{{site.url}}/assets/js/{{js}}"></script>
+	{% endfor %}
 	<script src="https://tumble1999.github.io/sky-games/assets/js/sky-remote.js"></script>
 </body>
 
