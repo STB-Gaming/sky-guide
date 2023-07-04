@@ -20,7 +20,7 @@ layout: null
 			{% for link in site.data.nav %}
 			<a href="{% if link.local %}{{site.url}}{% endif %}{{link.url}}"
 				class="header-item  {% if page.url contains link.url %}active{% endif %}">
-				<img src="{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
+				<img src="{{site.url}}{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
 				<label for="{{link.rel}}-logo">{{link.title}}</label>
 			</a>
 			{% endfor %}
