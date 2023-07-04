@@ -294,3 +294,36 @@ main {
 		}
 	}
 }
+
+.upnext-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: $sky_blue_dark;
+	display: flex;
+}
+.upnext {
+	background-color: $sky_blue_light;
+	color: $white;
+	margin: auto;
+	width: 600px;
+	height: 200px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 1.5em;
+	font-family: "Zurich";
+
+	text-transform: none;
+
+	:nth-child(2) {
+		font-size: 1.3em;
+	}
+	> * {
+		margin: 0.25em;
+	}
+}

@@ -10,4 +10,6 @@ list:
   href: https://tumble1999.github.io/sky-games/menus/open-games-1999/
 - title: Sky Games
   href: https://tumble1999.github.io/sky-games/menus/sky-games-2007/
+js:
+ - interactive.js
 ---

@@ -1,8 +1,8 @@
-let pages = Array.from(document.getElementsByClassName("item-list"));
+let pages = Array.from(document.getElementsByClassName("item-list")), menu;
 if (pages.length) {
 
 
-	let menu = createMenu({
+	menu = createMenu({
 		pages
 	});
 
@@ -17,13 +17,6 @@ if (pages.length) {
 		});
 	});
 
-
-	function pressLeft() {
-		menu.left();
-	}
-	function pressRight() {
-		menu.right();
-	}
 	function pressUp() {
 		menu.up();
 	}
