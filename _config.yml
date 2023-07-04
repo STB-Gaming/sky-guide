@@ -1,0 +1,39 @@
+url: https://tumble1999.github.io/sky-epg
+
+sky-logo: /assets/img/sky.png
+permalink: pretty
+
+home: /tv-guide
+
+collections:
+  menus:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: menus
+    values:
+      layout: menu
+
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - yarn.lock
+  - LICENSE
+  - plan.md
+  - README.md
+  - gulpfile.js
+  - gemfiles
+  - src
+  - package.json
+  - package-lock.json
+
+
+plugins:
+  - jekyll-redirect-from

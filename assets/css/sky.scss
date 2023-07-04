@@ -1,0 +1,262 @@
+---
+---
+
+$color_1: unset;
+$white: white;
+$color_3: #326de5;
+$color_4: black;
+$color_5: #5879c8;
+$sky_font_header: "Zurich";
+$sky_font_body: "ZurichTV";
+$sky_blue_light: #0036b2;
+$sky_blue_dark: #002083;
+$sky_yellow_light: #fcda15;
+$sky_yellow_dark: #ffaa02;
+
+/* Font Families */
+@font-face {
+	font-family: "Zurich";
+	src: url("{{site.url}}/assets/fonts/Zurich Bold Extended.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "ZurichTV";
+	src: url("{{site.url}}/assets/fonts/Zurich Bold Condensed.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: $sky_font_header;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 24px;
+	margin: 0;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $sky_font_body;
+	font-weight: bold;
+	font-size: 1.1em;
+	background: radial-gradient(circle at 0px 25%, #b0bfde 0%, transparent 20%) 0px 25%,
+		radial-gradient(circle at 110% 50%, #b0bfde 0%, transparent 30%) 100% 50%,
+		radial-gradient(circle at 25% 120%, #b0bfde 0%, transparent 40%) 25% 100%,
+		radial-gradient(circle at bottom left, #659df2 70%, #2973fa 95%);
+}
+a {
+	text-decoration: none;
+	color: $color_1;
+	&:visited {
+		text-decoration: none;
+		color: $color_1;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2em 0;
+	width: 700px;
+	display: flex;
+	flex-flow: column;
+	gap: 40px;
+}
+header {
+	display: flex;
+	gap: 24px;
+	justify-content: center;
+	color: $white;
+	width: fit-content;
+	font-size: 1.1em;
+	img {
+		height: 2.5em;
+		overflow: visible;
+	}
+	> * {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		gap: 0.3em;
+	}
+
+	.page-title {
+		display: grid;
+		grid-template-rows: auto auto;
+		color: $sky_blue_light;
+		flex-flow: column;
+		margin-top: 11px;
+		align-items: flex-start;
+		> * {
+			margin: 0em;
+		}
+	}
+
+	h1 {
+		font-weight: unset;
+		font-size: 1.5em;
+	}
+}
+.header-item.active {
+	color: $color_3;
+	img {
+		fill: #326de5;
+		filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
+	}
+}
+.header-item {
+	&:hover {
+		color: $color_3;
+		img {
+			fill: #326de5;
+			filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
+		}
+	}
+	&:focus {
+		color: $color_3;
+		img {
+			fill: #326de5;
+			filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
+		}
+	}
+}
+main {
+	width: 100%;
+	align-self: center;
+	display: grid;
+	gap: 0.5em;
+	a {
+		background-color: $sky_blue_light;
+		text-decoration: none;
+		&:focus {
+			background-color: $sky_yellow_light;
+			color: $color_4;
+			outline: none;
+		}
+		&:hover {
+			background-color: $sky_yellow_light;
+			color: $color_4;
+			outline: none;
+		}
+	}
+	.item-list {
+		font-family: $sky_font_header;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-flow: column;
+		color: $white;
+		font-size: 1.5em;
+		gap: 0.1em;
+		a {
+			display: flex;
+			&::before {
+				display: block;
+				width: 3em;
+				background-color: $sky_blue_dark;
+				color: $color_5;
+				text-align: center;
+				margin-right: 0.1em;
+			}
+			&:focus {
+				&::before {
+					background-color: $sky_yellow_dark;
+					color: $color_4;
+				}
+			}
+			&:hover {
+				&::before {
+					background-color: $sky_yellow_dark;
+					color: $color_4;
+				}
+			}
+		}
+	}
+
+	.page {
+		background-color: $sky_blue_light;
+		color: white;
+		* {
+			padding-left: 42px;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			background-color: $sky_yellow_light;
+			color: $sky_blue_light;
+		}
+	}
+}
+.item-list {
+	a {
+		&:nth-child(1) {
+			&::before {
+				content: "1";
+			}
+		}
+		&:nth-child(2) {
+			&::before {
+				content: "2";
+			}
+		}
+		&:nth-child(3) {
+			&::before {
+				content: "3";
+			}
+		}
+		&:nth-child(4) {
+			&::before {
+				content: "4";
+			}
+		}
+		&:nth-child(5) {
+			&::before {
+				content: "5";
+			}
+		}
+		&:nth-child(6) {
+			&::before {
+				content: "6";
+			}
+		}
+		&:nth-child(7) {
+			&::before {
+				content: "7";
+			}
+		}
+		&:nth-child(8) {
+			&::before {
+				content: "8";
+			}
+		}
+		&:nth-child(9) {
+			&::before {
+				content: "9";
+			}
+		}
+		&:nth-child(10) {
+			&::before {
+				content: "0";
+			}
+		}
+	}
+}

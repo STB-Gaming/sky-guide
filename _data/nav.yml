@@ -1,0 +1,18 @@
+
+
+- title: "TV GUIDE"
+  rel: guide
+  img: /assets/img/guide-tab.svg
+  url: /tv-guide
+- title: "BOX OFFICE"
+  rel: box-office
+  img: /assets/img/box-office-tab.svg
+  url: /box-office
+- title: "SERVICES"
+  rel: services
+  img: /assets/img/services-tab.svg
+  url: /services
+- title: "INTERACTIVE"
+  rel: interactive
+  img: /assets/img/interactive-tab.svg
+  url: /interactive
