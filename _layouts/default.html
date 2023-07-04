@@ -18,7 +18,8 @@ layout: null
 			</div>
 			{% if page.home %}
 			{% for link in site.data.nav %}
-			<a href="{{link.url}}" class="header-item  {% if page.url contains link.url %}active{% endif %}">
+			<a href="{{site.url}}{{link.url}}"
+				class="header-item  {% if page.url contains link.url %}active{% endif %}">
 				<img src="{{site.url}}{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
 				<label for="{{link.rel}}-logo">{{link.title}}</label>
 			</a>

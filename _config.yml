@@ -3,8 +3,6 @@ url: https://tumble1999.github.io/sky-epg
 sky-logo: /assets/img/sky.png
 permalink: pretty
 
-home: /tv-guide
-
 collections:
   menus:
     output: true
