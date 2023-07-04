@@ -18,9 +18,9 @@ layout: null
 			</div>
 			{% if page.home %}
 			{% for link in site.data.nav %}
-			<a href="{{site.url}}{{link.url}}"
+			<a href="{% if link.local %}{{site.url}}{% endif %}{{link.url}}"
 				class="header-item  {% if page.url contains link.url %}active{% endif %}">
-				<img src="{{site.url}}{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
+				<img src="{{link.img}}" alt="{{link.rel}}-logo" id="{{link.rel}}">
 				<label for="{{link.rel}}-logo">{{link.title}}</label>
 			</a>
 			{% endfor %}
@@ -45,7 +45,7 @@ layout: null
 			{% if page.list %}
 			<div class="item-list">
 				{% for link in page.list %}
-				<a href="{{link.href}}">{{link.title}}</a>
+				<a href="{% if link.local %}{{site.url}}{% endif %}{{link.href}}">{{link.title}}</a>
 				{% endfor %}
 			</div>
 			{% endif %}
