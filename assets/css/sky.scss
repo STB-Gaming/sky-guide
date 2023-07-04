@@ -77,22 +77,49 @@ a {
 	gap: 40px;
 	max-width: 100vw;
 }
+@media screen {
+}
 header {
 	display: flex;
-	gap: 24px;
-	justify-content: center;
 	color: $white;
-	width: fit-content;
 	font-size: 1.1em;
-	img {
-		height: 2.5em;
-		overflow: visible;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	.header-logo {
+		display: none;
+		@media (min-width: 768px) {
+			display: flex;
+			flex-flow: column;
+			align-items: center;
+			padding-right: 12px;
+			gap: 0.3em;
+		}
+		img {
+			height: 2.5em;
+			overflow: visible;
+		}
 	}
-	> * {
+
+	nav {
+		@media (min-width: 768px) {
+			padding-left: 24px;
+		}
+		flex: 1;
+		justify-content: space-evenly;
 		display: flex;
-		flex-flow: column;
-		align-items: center;
-		gap: 0.3em;
+		gap: 12px;
+
+		img {
+			height: 2.5em;
+			overflow: visible;
+		}
+		> * {
+			display: flex;
+			flex-flow: column;
+			align-items: center;
+			gap: 0.3em;
+		}
 	}
 
 	.page-title {
@@ -102,6 +129,11 @@ header {
 		flex-flow: column;
 		margin-top: 11px;
 		align-items: flex-start;
+
+		flex: 1;
+		@media (min-width: 768px) {
+			padding-left: 24px;
+		}
 		> * {
 			margin: 0em;
 		}
@@ -156,7 +188,8 @@ main {
 	}
 	.item-list {
 		font-family: $sky_font_header;
-		width: 80%;
+		width: 560px;
+		max-width: 100vw;
 		margin-left: auto;
 		margin-right: auto;
 		display: flex;
