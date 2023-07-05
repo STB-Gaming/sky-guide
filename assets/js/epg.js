@@ -11,5 +11,5 @@ function pressServices() {
 }
 
 function pressInteractive() {
-	window.location.href = "https://stb-gaming.github.io/sky-guide/intractive/";
+	window.location.href = "https://stb-gaming.github.io/sky-guide/interactive/";
 }
