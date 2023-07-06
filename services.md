@@ -8,7 +8,7 @@ list:
 - title: WEBSITE DETAILS
   local: true
   href: /services/website-details
-- title: Current Projects
+- title: CURRENT PROJECTS
   local: true
   href: /services/projects
 - title: OTHER EPGs
