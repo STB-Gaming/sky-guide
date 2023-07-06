@@ -23,6 +23,8 @@ title: People Involved
 * **playyourcardsright**
   * Scours the internet for screenshots.
   * keeps the wiki updated.
+* **Corvy**
+  * Consultant :p
 * **Tumble**
  * Created this EPG and Sky Games.
  * Expanding the accessability of the games such as mobile support.
