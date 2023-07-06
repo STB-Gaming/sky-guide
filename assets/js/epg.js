@@ -1,15 +1,15 @@
 function pressTvGuide() {
-	window.location.href = "https://stb-gaming.github.io/sky-guide/tv-guide/";
+	window.location.href = "https://stb-gaming.github.io/tv-guide/";
 }
 
 function pressBoxOffice() {
-	window.location.href = "https://stb-gaming.github.io/sky-guide/box-office/";
+	window.location.href = "https://stb-gaming.github.io/box-office/";
 }
 
 function pressServices() {
-	window.location.href = "https://stb-gaming.github.io/sky-guide/services/";
+	window.location.href = "https://stb-gaming.github.io/services/";
 }
 
 function pressInteractive() {
-	window.location.href = "https://stb-gaming.github.io/sky-guide/interactive/";
+	window.location.href = "https://stb-gaming.github.io/interactive/";
 }
