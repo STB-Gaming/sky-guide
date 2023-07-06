@@ -24,6 +24,10 @@ if (pages.length) {
 		menu.down();
 	}
 
+	function pressSelect() {
+		menu.getSelected().click();
+	}
+
 }
 
 function pressBack() {
