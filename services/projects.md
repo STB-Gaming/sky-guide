@@ -25,8 +25,11 @@ Update: Theres an error so we need a Mac user to get developer console.
 
 *colbolt*
 
-Use generic controllers to controll the games
+Use generic controllers to control the games
 
 # Sky Gamepad
 
 Work with evilhambuger64 to get it working with that
+ Todo:
+ - workout what type of device it is (e.g. keyboard or controler or something)
+ -
