@@ -15,10 +15,10 @@ layout: null
 	<div class="container">
 
 		<header class="nav">
-			<div class="header-logo">
+			<a href="{{site.url}}" class="header-logo">
 				<img src="{{site.url}}{{site.sky-logo}}" alt="" id="sky_logo">
 				<label for="sky_logo">guide</label>
-			</div>
+			</a>
 			{% if page.home %}
 			<nav>
 				{% for link in site.data.nav %}

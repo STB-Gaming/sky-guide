@@ -4,7 +4,7 @@ home: true
 list:
 - title: USING THIS WEBSITE
   local: true
-  href: /
+  href: /using-this-website
 - title: WEBSITE DETAILS
   local: true
   href: /services/website-details
