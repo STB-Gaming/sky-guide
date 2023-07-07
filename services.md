@@ -20,7 +20,4 @@ list:
 - title: TEST PAGE
   local: true
   href: /services/test
-- title: VIDEO TEST
-  local: true
-  href: /services/test-video
 ---
