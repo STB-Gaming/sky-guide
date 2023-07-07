@@ -1,0 +1,28 @@
+---
+title: Video Test
+layout: default
+css:
+- sky-tv.css
+js:
+- sky-tv.js
+---
+
+<div class="video-container">
+	<video loop>
+		<source src="{{site.url}}/assets/videos/sky-games.mp4" type="video/mp4" />
+	</video>
+	<div class="video-controls">
+		<header>
+			<span class="video-title">Hello World</span>
+			<span class="date">Date</span>
+		</header>
+		<main>
+			<p>This is some nice text. I might put a progress bar here</p>
+		</main>
+		<footer class="colors">
+			<a href="#" class="red play-pause">Play/Pause</a>
+			<a href="#" class="green mute">Mute</a>
+			<a href="#" class="blue fullscreen">Fullscreen</a>
+		</footer>
+	</div>
+</div>

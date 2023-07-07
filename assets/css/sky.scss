@@ -75,7 +75,8 @@ a {
 	}
 }
 
-.backup {
+.backup,
+.select {
 	color: #000;
 	border: 1px solid #fff;
 	display: inline;
@@ -135,183 +136,203 @@ a {
 			// padding-right: 24px;
 		}
 	}
-}
-header {
-	display: flex;
-	color: $white;
-	font-size: 1.1em;
-	flex-wrap: wrap;
-	justify-content: flex-start;
 
-	.header-logo {
-		display: none;
-		font-family: "SkyLogo" unset;
-		@media (min-width: 540px) {
-			display: flex;
-			flex-flow: column;
-			align-items: center;
-		}
-		img {
-			height: 2.5em;
-			overflow: visible;
-		}
-		span {
-			margin: 0;
-		}
-		:nth-child(1) {
-			font-size: 2.5em;
-		}
-	}
-
-	nav {
-		// @media (min-width: 540) {
-		// 	padding-left: 24px;
-		// }
-		flex: 1;
-		justify-content: space-evenly;
+	> header {
 		display: flex;
-		gap: 12px;
-
-		img {
-			height: 2.5em;
-			overflow: visible;
-		}
-		> * {
-			display: flex;
-			flex-flow: column;
-			align-items: center;
-			gap: 0.3em;
-		}
-	}
-
-	.page-title {
-		display: grid;
-		grid-template-rows: auto auto;
-		color: $sky_blue_light;
-		flex-flow: column;
-		margin-top: 11px;
-		align-items: flex-start;
-
-		flex: 1;
-		@media (min-width: 540px) {
-			padding-left: 24px;
-		}
-		> * {
-			margin: 0em;
-		}
-	}
-
-	h1 {
-		font-weight: unset;
-		font-size: 1.5em;
-	}
-}
-.header-item.active {
-	color: $color_3;
-	img {
-		fill: #326de5;
-		filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
-	}
-}
-.header-item {
-	&:hover {
-		color: $color_3;
-		img {
-			fill: #326de5;
-			filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
-		}
-	}
-	&:focus {
-		color: $color_3;
-		img {
-			fill: #326de5;
-			filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
-		}
-	}
-}
-main {
-	width: 100%;
-	align-self: flex-start;
-	display: grid;
-	gap: 0.5em;
-	a {
-		background-color: $sky_blue_light;
-		text-decoration: none;
-		&:focus {
-			background-color: $sky_yellow_light;
-			color: $color_4;
-			outline: none;
-		}
-		&:hover {
-			background-color: $sky_yellow_light;
-			color: $color_4;
-			outline: none;
-		}
-	}
-	.item-list {
-		font-family: $sky_font_header;
-		width: 560px;
-		max-width: 100vw;
-		margin-left: auto;
-		margin-right: auto;
-		display: flex;
-		flex-flow: column;
 		color: $white;
-		font-size: 1.5em;
-		gap: 0.1em;
-		a {
+		font-size: 1.1em;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		.header-logo {
+			display: none;
+			font-family: "SkyLogo" unset;
+			@media (min-width: 540px) {
+				display: flex;
+				flex-flow: column;
+				align-items: center;
+			}
+			img {
+				height: 2.5em;
+				overflow: visible;
+			}
+			span {
+				margin: 0;
+			}
+			:nth-child(1) {
+				font-size: 2.5em;
+			}
+		}
+
+		nav {
+			// @media (min-width: 540) {
+			// 	padding-left: 24px;
+			// }
+			flex: 1;
+			justify-content: space-evenly;
 			display: flex;
-			&::before {
-				display: block;
-				width: 3em;
-				background-color: $sky_blue_dark;
-				color: $color_5;
-				text-align: center;
-				margin: 0px 10px 0px 5px;
+			gap: 12px;
+
+			img {
+				height: 2.5em;
+				overflow: visible;
 			}
-			&:focus {
-				&::before {
-					background-color: $sky_yellow_dark;
-					color: $color_4;
-				}
+			> * {
+				display: flex;
+				flex-flow: column;
+				align-items: center;
+				gap: 0.3em;
 			}
-			&:hover {
-				&::before {
-					background-color: $sky_yellow_dark;
-					color: $color_4;
-				}
+		}
+
+		.page-title {
+			display: grid;
+			grid-template-rows: auto auto;
+			color: $sky_blue_light;
+			flex-flow: column;
+			margin-top: 11px;
+			align-items: flex-start;
+
+			flex: 1;
+			@media (min-width: 540px) {
+				padding-left: 24px;
+			}
+			> * {
+				margin: 0em;
+			}
+		}
+
+		h1 {
+			font-weight: unset;
+			font-size: 1.5em;
+		}
+	}
+	.header-item.active {
+		color: $color_3;
+		img {
+			fill: #326de5;
+			filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
+		}
+	}
+	.header-item {
+		&:hover {
+			color: $color_3;
+			img {
+				fill: #326de5;
+				filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
+			}
+		}
+		&:focus {
+			color: $color_3;
+			img {
+				fill: #326de5;
+				filter: invert(66%) sepia(52%) saturate(2740%) hue-rotate(211deg) brightness(95%) contrast(89%);
 			}
 		}
 	}
+	> main {
+		width: 100%;
+		align-self: flex-start;
+		display: grid;
+		gap: 0.5em;
+		// a {
+		// background-color: $sky_blue_light;
+		// text-decoration: none;
+		// 	&:focus {
+		// background-color: $sky_yellow_light;
+		// color: $color_4;
+		// outline: none;
+		// 	}
+		// 	&:hover {
+		// 		background-color: $sky_yellow_light;
+		// 		color: $color_4;
+		// 		outline: none;
+		// 	}
+		// }
+		.item-list {
+			font-family: $sky_font_header;
+			width: 560px;
+			max-width: 100vw;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			flex-flow: column;
+			color: $white;
+			font-size: 1.5em;
+			gap: 0.1em;
+			a {
+				display: flex;
+				background-color: $sky_blue_light;
+				text-decoration: none;
+				&::before {
+					display: block;
+					width: 3em;
+					background-color: $sky_blue_dark;
+					color: $color_5;
+					text-align: center;
+					margin: 0px 10px 0px 5px;
+				}
+				&:focus {
+					background-color: $sky_yellow_light;
+					color: $color_4;
+					outline: none;
+					&::before {
+						background-color: $sky_yellow_dark;
+						color: $color_4;
+					}
+				}
+				&:hover {
+					&::before {
+						background-color: $sky_yellow_dark;
+						color: $color_4;
+					}
+				}
+			}
+		}
 
-	.page {
-		background-color: $sky_blue_light;
-		color: white;
-		> *:not(ul):not(ol):not(li) {
-			&,
-			> * {
+		.page {
+			background-color: $sky_blue_light;
+			color: white;
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p {
 				padding-left: 42px;
 			}
-		}
-		ul,
-		ol {
-			padding-left: 31px;
-			li {
-				padding-left: 10px;
+			ul,
+			ol {
+				padding-left: 31px;
+				li {
+					padding-left: 10px;
+				}
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				background-color: $sky_yellow_light;
+				color: $sky_blue_light;
 			}
 		}
+	}
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			background-color: $sky_yellow_light;
-			color: $sky_blue_light;
+	> footer {
+		display: flex;
+		flex-direction: column;
+
+		.colors {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
 	}
 }
+
 .item-list {
 	a {
 		&:nth-child(1) {
@@ -398,15 +419,5 @@ main {
 	}
 	> * {
 		margin: 0.25em;
-	}
-}
-
-footer {
-	display: flex;
-	flex-direction: column;
-
-	.colors {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }

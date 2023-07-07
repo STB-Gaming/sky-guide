@@ -1,0 +1,51 @@
+---
+---
+
+$hf_color: black;
+$time_color: grey;
+$hf_background: white;
+$main_background: #0036b2;
+$main_color: white;
+.page > * {
+	padding: 0 !important;
+}
+
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+.video-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.video-container[data-fullscreen="true"] {
+	.video-controls {
+		bottom: 10%;
+	}
+}
+
+.video-controls {
+	position: absolute;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	grid-template-rows: 25% 50% 25%;
+	width: 1200px;
+	max-width: 100%;
+
+	header,
+	footer {
+		background-color: $hf_background;
+		color: $hf_color;
+		display: flex;
+		justify-content: space-between;
+	}
+	main {
+		background-color: $main_background;
+		color: $main_color;
+	}
+}
