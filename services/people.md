@@ -26,5 +26,5 @@ title: People Involved
 * **Corvy**
   * Consultant :p
 * **Tumble**
- * Created this EPG and Sky Games.
- * Expanding the accessability of the games such as mobile support.
+  * Created this EPG and Sky Games.
+  * Expanding the accessability of the games such as mobile support.

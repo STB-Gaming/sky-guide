@@ -39,6 +39,7 @@ $vc_background: #002083;
 	grid-template-rows: 25% 50% 25%;
 	width: 1200px;
 	max-width: 100%;
+	height: 125px;
 
 	header,
 	footer {
@@ -50,5 +51,10 @@ $vc_background: #002083;
 	main {
 		background-color: $main_background;
 		color: $main_color;
+		display: grid;
+		grid-template-columns: 20% auto;
+		grid-template-rows: auto auto;
+
+		padding: 0.2em 24px;
 	}
 }
