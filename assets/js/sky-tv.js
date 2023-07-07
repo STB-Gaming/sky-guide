@@ -49,9 +49,12 @@ videos.forEach(container => {
 			if (document.fullscreenElement !== null) {
 				document.exitFullscreen();
 				container.setAttribute("data-fullscreen", false);
+				clearTimeout(visibilityTimeout);
+				controls.style.opacity = 1;
 			} else {
 				container.requestFullscreen();
 				container.setAttribute("data-fullscreen", true);
+				makeControlsVisiable();
 			}
 		});
 		console.log("added fullscreen button functionality");
@@ -71,10 +74,12 @@ videos.forEach(container => {
 	}
 
 
-	document.addEventListener("mousemove", () => {
-		makeControlsVisiable();
+	container.addEventListener("mousemove", () => {
+		if (document.fullscreenElement !== null) {
+			makeControlsVisiable();
+		}
 	});
-	makeControlsVisiable();
+	//makeControlsVisiable();
 
 	if (!video && !!youtube) {
 		controls.style.display = "none";
