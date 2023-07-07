@@ -6,19 +6,22 @@ $time_color: grey;
 $hf_background: white;
 $main_background: #0036b2;
 $main_color: white;
+$vc_background: #002083;
 .page > * {
 	padding: 0 !important;
 }
 
-video {
-	max-width: 100%;
-	height: auto;
-}
-
 .video-container {
 	position: relative;
+	background-color: $vc_background;
 	display: flex;
 	justify-content: center;
+	video,
+	iframe {
+		width: 100%;
+		height: auto;
+		min-height: 315px;
+	}
 }
 
 .video-container[data-fullscreen="true"] {
