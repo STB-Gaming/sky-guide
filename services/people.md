@@ -9,11 +9,15 @@ title: People Involved
 * Tom
 
 # Notable People
+- **Bailey Magikz 🌯 @KebabShop**
+  - Initial idea for a sky games interface (footage lost).
+* **Corvy**
+  * Consultant :p
 - **Cobalt**
   - Created https://skygames.pages.dev/.
   - Setup Controller support.
-- **Bailey Magikz 🌯 @KebabShop**
-  - Initial idea for a sky games interface (footage lost).
+* **cypher <3** and **Allanbuzzy** ⭐🦝
+  * Creating SteamGridDB images
 * **Evil Hamburger 64**
   * Bought a Sky Gamepad.
   * Makes entertaining videos.
@@ -23,8 +27,6 @@ title: People Involved
 * **playyourcardsright**
   * Scours the internet for screenshots.
   * keeps the wiki updated.
-* **Corvy**
-  * Consultant :p
 * **Tumble**
   * Created this EPG and Sky Games.
   * Expanding the accessability of the games such as mobile support.
