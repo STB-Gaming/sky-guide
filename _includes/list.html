@@ -1,0 +1,64 @@
+{% comment %}
+collection: site collection name
+filter : tag to filter by
+limit: item count
+items: collection items
+type: menu/guide
+
+# MENU
+<div class="menu">
+	{% for link in page.list %}
+	<a href="{% if link.local %}{{site.url}}{% endif %}{{link.href}}">{{link.title}}</a>
+	{% endfor %}
+</div>
+
+# GUIDE
+<div class="tv-guide">
+	{% for programme in site.programmes %}
+	<a href="{{programme.url}}" class="programme">{{programme.title}}</a>
+	{% endfor %}
+</div>
+
+{% endcomment %}
+
+
+{% if include.collection %}
+	{% assign collectionItems = site[include.collection] %}
+{% endif %}
+
+{% assign items = "" | split: "" %}
+
+{% if include.items %}
+	{% for item in include.items %}
+		{% assign siteItem = collectionItems | where:"url", item.url | first %}
+		{% if siteItem and siteItem.url %}
+			{% assign items = items | push: siteItem %}
+		{% else %}
+			{% assign items = items | push: item %}
+		{% endif %}
+	{% endfor %}
+{% else %}
+	{% assign items = collectionItems %}
+{% endif %}
+
+{% if include.filter %}
+	{% assign items = items | where_exp:"item",include.filter %}
+{% endif %}
+
+{% if include.type == "guide" %}
+{% assign items = items | sort: "channel" %}
+{% endif %}
+
+<div class="{% if include.type == "guide" %}tv-guide{% else %}menu{% endif %}">
+	{% assign channel = "" %}
+	{% for item in items %}
+		{% if include.type == "guide" %}
+			{% if channel != item.channel %}
+			{% assign channel = item.channel %}
+			<span class="channel">{{ channel }}</span>
+			<script>console.log(JSON.parse(`{{channel|jsonify}}`))</script>
+			{% endif %}
+		{% endif %}
+		<a href="{{item.url}}">{{item.title}}</a>
+	{% endfor %}
+</div>

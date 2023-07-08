@@ -1,14 +1,14 @@
 
 
-let programmes = Array.from(document.querySelectorAll(".programme"));
+let programmes = Array.from(document.querySelectorAll(".tv-guide > a"));
 let channels = Array.from(document.querySelectorAll(".channel"));
-let lists = Array.from(document.querySelectorAll(".channel-grid"));
+let lists = Array.from(document.querySelectorAll(".tv-guide"));
 
 let guideMenu = createMenu({
 	pages: lists,
 	rows: channels.length,
 	columns: 4,
-	itemSelector: ".programme",
+	itemSelector: ".tv-guide > a",
 	onFocus: (item) => {
 		if (!guideMenu.getPos) return;
 		let pos = guideMenu.getPos();

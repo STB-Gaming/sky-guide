@@ -5,14 +5,34 @@ permalink: pretty
 
 
 collections:
+  tv-guide:
+    output: true
+  box-office:
+    output: true
+  services:
+    output: true
   programmes:
     output: true
+    permalink: /tv-guide/:categories/:title
+  channels:
+    output: false
+  categories:
+    output: true
+    permalink: /tv-guide/:title
 
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+  - scope:
+      path: ""
+      type: tv-guide
+    values:
+      css:
+      - sky-guide.css
+      js:
+      - sky-guide.js
   - scope:
       path: ""
       type: programmes

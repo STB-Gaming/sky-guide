@@ -1,4 +1,4 @@
-let pages = Array.from(document.getElementsByClassName("item-list")), menu;
+let pages = Array.from(document.getElementsByClassName("menu")), menu;
 if (pages.length) {
 
 
@@ -31,9 +31,8 @@ function pressSelect() {
 }
 
 function pressBack() {
-	let things = window.location.pathname.split("/");
+	let things = window.location.pathname.split("/").filter(i=>!!i);
 	console.log(things);
-	things.pop();
 	things.pop();
 	window.location.pathname = things.join("/");
 }

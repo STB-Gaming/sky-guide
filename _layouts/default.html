@@ -16,7 +16,6 @@ layout: null
 	{% include video.html title=page.title type=page.type video=page.video channel=page.channel %}
 	{% else %}
 	<div class="container">
-
 		<header class="nav">
 			<a href="{{site.url}}" class="header-logo">
 				<span>STB</span>
@@ -41,6 +40,7 @@ layout: null
 			</div>
 			{% endif %}
 		</header>
+
 		<main>
 			{% if page.test %}
 			{{content}}
@@ -53,12 +53,17 @@ layout: null
 			</div>
 			{% endif %}
 
+			{% comment %}
 			{% if page.list %}
-			<div class="item-list">
+			<div class="menu">
 				{% for link in page.list %}
 				<a href="{% if link.local %}{{site.url}}{% endif %}{{link.href}}">{{link.title}}</a>
 				{% endfor %}
 			</div>
+			{% endif %}
+			{% endcomment %}
+			{% if page.list %}
+			{% include list.html collection=page.list.collection filter=page.list.filter limit=page.list.limit items=page.list.items type=page.list.type %}
 			{% endif %}
 			{% endif %}
 		</main>
@@ -68,6 +73,7 @@ layout: null
 			{% unless page.home %}
 			<p class="actions">Press <a href="javascript:pressBack()" class="backup">BACK UP</a> to return</p>
 			{% endunless %}
+		</footer>
 	</div>
 	{% endif %}
 

@@ -86,7 +86,7 @@ videos.forEach(container => {
 		document.addEventListener("youtubeready", () => {
 
 			let player = new YT.Player(youtube.id, {
-
+				playerVars: { 'autoplay': 1, 'controls': 0 },
 				playerVars: {
 					'playsinline': 1
 				},
