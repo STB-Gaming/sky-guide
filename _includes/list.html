@@ -55,6 +55,7 @@ type: menu/guide
 		{% if include.type == "guide" %}
 			{% if channel != item.channel %}
 			{% assign channel = item.channel %}
+			<span class="channel-end"></span>
 			<span class="channel">{{ channel }}</span>
 			<script>console.log(JSON.parse(`{{channel|jsonify}}`))</script>
 			{% endif %}
