@@ -1,0 +1,17 @@
+---
+title: Test guide
+layout: default
+time: true
+test: true
+css:
+- sky-guide.css
+js:
+- sky-guide.js
+---
+<div class="tv-guide">
+	<div class="channel-grid">
+		{% for programme in site.programmes %}
+		<a href="{{programme.url}}" class="programme">{{programme.title}}</a>
+		{% endfor %}
+	</div>
+</div>

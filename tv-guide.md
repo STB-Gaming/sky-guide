@@ -8,4 +8,6 @@ list:
 - title: MUSIC
   local: true
   href: /tv-guide/music
+- title: TEST GUIDE
+  href: test-guide
 ---

@@ -17,17 +17,17 @@ if (pages.length) {
 		});
 	});
 
-	function pressUp() {
-		menu.up();
-	}
-	function pressDown() {
-		menu.down();
-	}
+}
 
-	function pressSelect() {
-		menu.getSelected().click();
-	}
+function pressUp() {
+	menu.up();
+}
+function pressDown() {
+	menu.down();
+}
 
+function pressSelect() {
+	menu.getSelected().click();
 }
 
 function pressBack() {
@@ -78,16 +78,3 @@ function presshelp() {
 
 	pressHelp();
 }
-
-
-document.dispatchEvent(new KeyboardEvent("keydown", {
-	code: 76
-}));
-
-document.dispatchEvent(new KeyboardEvent("keypress", {
-	code: 76
-}));
-setTimeout(() =>
-	document.dispatchEvent(new KeyboardEvent("keyup", {
-		code: 76
-	})), 500);

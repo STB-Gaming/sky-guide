@@ -4,6 +4,24 @@ sky-logo: /assets/img/stb-logo.webp
 permalink: pretty
 
 
+collections:
+  programmes:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: programmes
+    values:
+      css:
+      - sky-tv.css
+      js:
+      - sky-tv.js
+
 exclude:
   - node_modules
   - Gemfile

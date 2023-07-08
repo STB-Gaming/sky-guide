@@ -1,0 +1,46 @@
+---
+---
+
+$mobile: 720px;
+$program_bg: #002db6;
+
+@media (min-width: $mobile) {
+	.channel-grid {
+		gap: 4px;
+		display: grid;
+		overflow: visible;
+		position: relative;
+		font-size: 24px;
+		max-width: 85%;
+		margin-top: -4px;
+		font-family: Zurich;
+		font-stretch: condensed;
+		grid-template-rows: repeat(11, calc(1em + 6px));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+
+		.channel {
+			color: #fff;
+			cursor: not-allowed;
+			overflow: hidden;
+			background: $program_bg;
+			white-space: nowrap;
+			text-overflow: "..";
+			grid-column-start: 1;
+		}
+		.programme {
+			color: #fff;
+			overflow: hidden;
+			background: #002db6;
+			white-space: nowrap;
+			text-overflow: "..";
+
+			&:focus {
+				color: #002db6;
+				background: #fcda15;
+			}
+		}
+		> * {
+			text-overflow: ellipsis;
+		}
+	}
+}

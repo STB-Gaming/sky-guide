@@ -12,6 +12,9 @@ layout: null
 </head>
 
 <body>
+	{% if page.video %}
+	{% include video.html title=page.title type=page.type video=page.video channel=page.channel %}
+	{% else %}
 	<div class="container">
 
 		<header class="nav">
@@ -39,6 +42,9 @@ layout: null
 			{% endif %}
 		</header>
 		<main>
+			{% if page.test %}
+			{{content}}
+			{% else %}
 
 			{% assign content_test = page.content | strip_newlines %}
 			{% if content_test != "" %}
@@ -54,18 +60,16 @@ layout: null
 				{% endfor %}
 			</div>
 			{% endif %}
+			{% endif %}
 		</main>
 		<footer>
 			<span class="colors">
-				<a href="javascript:pressRed()" class="red">Red</a>
-				<a href="javascript:pressGreen()" class="green">Green</a>
-				<a href="javascript:pressYellow()" class="yellow">Yellow</a>
-				<a href="javascript:pressBlue()" class="blue">Blue</a>
 			</span>
 			{% unless page.home %}
 			<p class="actions">Press <a href="javascript:pressBack()" class="backup">BACK UP</a> to return</p>
 			{% endunless %}
 	</div>
+	{% endif %}
 
 	<script src="https://stb-gaming.github.io/sky-games/assets/js/menu.js"></script>
 	<script src="{{site.url}}/assets/js/script.js"></script>
