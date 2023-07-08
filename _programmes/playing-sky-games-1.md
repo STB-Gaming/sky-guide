@@ -1,6 +1,6 @@
 ---
 title: "Playing Sky Games - Vol.1"
-channel: evil-hamburger-64
+channel: 64 Evil Hambuger
 type: "youtube"
 video: "wNFEkJMpVpo"
 ---
