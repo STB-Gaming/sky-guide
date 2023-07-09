@@ -44,3 +44,12 @@ function pressUp() {
 function pressDown() {
 	guideMenu.down();
 }
+
+
+lists.forEach((p, i) => {
+	guideMenu.getItems(i).forEach(item => {
+		item.addEventListener("mouseenter", () => {
+			guideMenu.goto(item);
+		});
+	});
+});

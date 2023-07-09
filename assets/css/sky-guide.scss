@@ -4,46 +4,47 @@
 $mobile: 720px;
 $program_bg: #002db6;
 
-@media (min-width: $mobile) {
-	.tv-guide {
-		gap: 4px;
-		display: grid;
-		overflow: visible;
-		position: relative;
-		font-size: 24px;
-		margin-top: -4px;
-		font-family: Zurich;
-		font-stretch: condensed;
-		grid-template-rows: repeat(11, calc(1em + 6px));
-		grid-template-columns: 34% repeat(3, minmax(0, 1fr));
+//@media (min-width: $mobile) {
+.tv-guide {
+	gap: 4px;
+	display: grid;
+	overflow: visible;
+	position: relative;
+	font-size: 24px;
+	margin-top: -4px;
+	font-family: Zurich;
+	font-stretch: condensed;
+	grid-template-rows: repeat(11, calc(1em + 6px));
+	grid-template-columns: 34% repeat(3, minmax(0, 1fr));
 
-		display: flex;
-		flex-wrap: wrap;
-    justify-content: stretch;
-    align-items: center;
-    row-gap: 2px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: stretch;
+	align-items: center;
+	row-gap: 2px;
 
-		.channel-end {
-			flex-basis: 100%;
-  			width: 0;
-		}
-		.channel {
-			grid-column-start: 1;
-			flex: 0 0 33%;
-		}
+	.channel-end {
+		flex-basis: 100%;
+		width: 0;
+	}
+	.channel {
+		grid-column-start: 1;
+		flex: 0 0 33%;
+	}
 
-		> * {
-			flex: 1;
-			text-overflow: ellipsis;
-			overflow: hidden;
-			background: $program_bg;
-			color: #fff;
-			text-overflow: "..";
-			white-space: nowrap;
-			&:focus {
-				color: #002db6;
-				background: #fcda15;
-			}
+	> * {
+		flex: 1;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		background: $program_bg;
+		color: #fff;
+		text-overflow: "..";
+		white-space: nowrap;
+		&:focus,
+		&.active {
+			color: #002db6;
+			background: #fcda15;
 		}
 	}
 }
+//}
