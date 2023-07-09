@@ -1,4 +1,4 @@
-function createMenu({
+function createMenuOld({
 	pages,
 	rows,
 	columns = 1,
