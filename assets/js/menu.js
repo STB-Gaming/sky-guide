@@ -8,11 +8,16 @@ function createMenu({
 
 
 	function gotoPage(newPage) {
-		if (!pages[newPage]) return;
+		if (!pages[newPage]) {
+			console.log("no more pages");
+			return;
+		}
 		if (pages[p]) pages[p].style.display = "none";
+		let lastPos = getPos();
+		let dp = newPage - p;
+		//console.log({ p, newPage, dp });
 		p = newPage;
 		pages[p].style.display = null;
-		i = 0;
 		items = getItems(p);
 
 		let rows = [], cols = [];
@@ -35,6 +40,18 @@ function createMenu({
 				items[i].dataset.x = c;
 			}
 		}
+
+		i = 0;
+		if (lastPos && dp) {
+			let r;
+			while (!r || r.length == 0) {
+				r = rows[lastPos.y];
+				lastPos.y--;
+			}
+			//console.log({ lastPos, r, dp });
+			i = dp > 0 ? r[0] : r[r.length - 1];
+		}
+		//console.log(i);
 		updateFocus();
 	}
 	function setPages(newPages) {
@@ -76,7 +93,14 @@ function createMenu({
 		rels = rels.sort((a, b) => a.m - b.m).sort((a, b) => (dx ? a.mx - b.mx : dy ? a.my - b.my : a.m - b.m));
 
 		//console.log(rels);
-		if (!rels.length) return;
+		if (!rels.length) {
+			if (dx > 0) {
+				nextPage();
+			} if (dx < 0) {
+				lastPage();
+			}
+			return;
+		};
 		i = rels[0].i;
 		let item = rels[0].e;
 
@@ -112,11 +136,11 @@ function createMenu({
 
 
 	function nextPage() {
-		gotoPage(p++);
+		gotoPage(p + 1);
 	}
 
 	function lastPage() {
-		gotoPage(p--);
+		gotoPage(p - 1);
 
 	}
 
@@ -151,7 +175,8 @@ function createMenu({
 		return Array.from(pages[p].querySelectorAll(itemSelector));
 	}
 
-	function getItem(p, x, y) {
+	function getItem({ x, y }) {
+		return items.findIndex(i => i.x == x && i.y == y);
 	}
 
 	function getSelected() {
@@ -160,6 +185,7 @@ function createMenu({
 
 	function getPos() {
 		let current = items[i];
+		if (!current || !current.dataset) return;
 		let { x, y } = current.dataset;
 		return { x, y };
 	}
