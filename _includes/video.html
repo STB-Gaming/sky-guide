@@ -3,7 +3,8 @@
 	{% case include.type %}
 	{% when 'youtube' %}<iframe width="560" height="315" id="yt_{{include.video}}"
 		src="https://www.youtube.com/embed/{{include.video}}?controls=0&enablejsapi=1&autoplay=1" frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		allowfullscreen></iframe>
 	{% when 'local' %}
 	<video src="{{site.url}}/assets/videos/{{include.video}}" type="video/mp4" autoplay></video>
 	{% else %}
@@ -21,8 +22,8 @@
 			{% if page.video %}
 			<a href="javascript:pressBack()"><span class="backup">BACK UP</span> Go Back</a>
 			{% endif %}
-			<a href="#" class="red play-pause">Play/Pause</a>
-			<a href="#" class="green mute">Mute</a>
+			<a href="#" class="green play-pause">Play/Pause</a>
+			<a href="#" class="yellow mute">Mute</a>
 			<a href="#" class="blue fullscreen">Fullscreen</a>
 		</footer>
 	</div>

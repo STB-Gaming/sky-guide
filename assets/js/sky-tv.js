@@ -28,24 +28,26 @@ videos.forEach(container => {
 		controls = container.querySelector(".video-controls"),
 		visibilityTimeout;
 	if (playPause) {
-		playPause.addEventListener("click", () => {
+		window.pressGreen = () => {
 			if (!video) return;
 			video.paused ? video.play() : video.pause();
-		});
+		};
+		playPause.addEventListener("click", window.pressGreen);
 		console.log("added play button functionality");
 	}
 	if (mute) {
-		mute.addEventListener("click", () => {
+		window.pressYellow = () => {
 			if (!video) return;
 			video.muted = !video.muted;
-		});
+		};
+		mute.addEventListener("click", window.pressYellow);
 		console.log("added mute button functionality");
 	}
 
 	if (!document?.fullscreenEnabled) {
 		fullscreen.style.display = "none";
 	} else if (fullscreen) {
-		fullscreen.addEventListener("click", () => {
+		window.pressBlue = () => {
 			if (document.fullscreenElement !== null) {
 				document.exitFullscreen();
 				container.setAttribute("data-fullscreen", false);
@@ -56,7 +58,8 @@ videos.forEach(container => {
 				container.setAttribute("data-fullscreen", true);
 				makeControlsVisiable();
 			}
-		});
+		};
+		fullscreen.addEventListener("click", window.pressBlue);
 		console.log("added fullscreen button functionality");
 	}
 
