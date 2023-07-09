@@ -45,6 +45,13 @@ function pressDown() {
 	guideMenu.down();
 }
 
+if (typeof SkyRemote != 'undefined') {
+	SkyRemote.createSkyRemote({
+		pressSelect, pressLeft, pressUp, pressDown
+	});
+}
+
+
 
 lists.forEach((p, i) => {
 	guideMenu.getItems(i).forEach(item => {

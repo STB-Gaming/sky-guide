@@ -31,7 +31,7 @@ function pressSelect() {
 }
 
 function pressBack() {
-	let things = window.location.pathname.split("/").filter(i=>!!i);
+	let things = window.location.pathname.split("/").filter(i => !!i);
 	console.log(things);
 	things.pop();
 	window.location.pathname = things.join("/");
@@ -77,3 +77,8 @@ function presshelp() {
 
 	pressHelp();
 }
+
+
+SkyRemote.createSkyRemote({
+	pressSelect, pressLeft, pressRight, pressUp, pressDown, pressHelp, pressBack
+});

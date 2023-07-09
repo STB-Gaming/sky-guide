@@ -26,7 +26,8 @@ videos.forEach(container => {
 		mute = container.querySelector(".mute"),
 		fullscreen = container.querySelector(".fullscreen"),
 		controls = container.querySelector(".video-controls"),
-		visibilityTimeout;
+		visibilityTimeout,
+		togglePlay, toggleMute, toggleFullscreen;
 	if (playPause) {
 		window.pressGreen = () => {
 			if (!video) return;
@@ -36,18 +37,18 @@ videos.forEach(container => {
 		console.log("added play button functionality");
 	}
 	if (mute) {
-		window.pressYellow = () => {
+		toggleMute = () => {
 			if (!video) return;
 			video.muted = !video.muted;
 		};
-		mute.addEventListener("click", window.pressYellow);
+		mute.addEventListener("click", toggleMute);
 		console.log("added mute button functionality");
 	}
 
 	if (!document?.fullscreenEnabled) {
 		fullscreen.style.display = "none";
 	} else if (fullscreen) {
-		window.pressBlue = () => {
+		toggleFullscreen = () => {
 			if (document.fullscreenElement !== null) {
 				document.exitFullscreen();
 				container.setAttribute("data-fullscreen", false);
@@ -59,8 +60,16 @@ videos.forEach(container => {
 				makeControlsVisiable();
 			}
 		};
-		fullscreen.addEventListener("click", window.pressBlue);
+		fullscreen.addEventListener("click", toggleFullscreen);
 		console.log("added fullscreen button functionality");
+	}
+
+	if (typeof SkyRemote != 'undefined') {
+		SkyRemote.createSkyRemote({
+			pressGreen: togglePlay,
+			pressYellow: toggleMute,
+			pressBlue: toggleFullscreen
+		});
 	}
 
 	if (video)
@@ -132,4 +141,6 @@ videos.forEach(container => {
 		});
 		setupYT();
 	}
+
+
 });

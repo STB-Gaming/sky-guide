@@ -13,3 +13,8 @@ function pressServices() {
 function pressInteractive() {
 	window.location.href = "https://stb-gaming.github.io/interactive/";
 }
+if (typeof SkyRemote != 'undefined') {
+	SkyRemote.createSkyRemote({
+		pressTvGuide, pressBoxOffice, pressServices, pressInteractive
+	});
+}
