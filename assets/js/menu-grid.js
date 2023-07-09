@@ -1,4 +1,4 @@
-function createMenuOld({
+function createMenuGrid({
 	pages,
 	rows,
 	columns = 1,
