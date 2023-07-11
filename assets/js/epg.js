@@ -1,20 +1,19 @@
-function pressTvGuide() {
-	window.location.href = "https://stb-gaming.github.io/tv-guide/";
-}
 
-function pressBoxOffice() {
-	window.location.href = "https://stb-gaming.github.io/box-office/";
-}
-
-function pressServices() {
-	window.location.href = "https://stb-gaming.github.io/services/";
-}
-
-function pressInteractive() {
-	window.location.href = "https://stb-gaming.github.io/interactive/";
-}
 if (typeof SkyRemote != 'undefined') {
-	SkyRemote.createSkyRemote({
-		pressTvGuide, pressBoxOffice, pressServices, pressInteractive
+
+	SkyRemote.onReleaseButton("tv-guide", () => {
+		window.location.href = "https://stb-gaming.github.io/tv-guide/";
+	});
+
+	SkyRemote.onReleaseButton("box-office", () => {
+		window.location.href = "https://stb-gaming.github.io/box-office/";
+	});
+
+	SkyRemote.onReleaseButton("services", () => {
+		window.location.href = "https://stb-gaming.github.io/services/";
+	});
+
+	SkyRemote.onReleaseButton("interactive", () => {
+		window.location.href = "https://stb-gaming.github.io/interactive/";
 	});
 }
