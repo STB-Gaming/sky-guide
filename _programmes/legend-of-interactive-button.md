@@ -1,6 +1,6 @@
 ---
 title: "Sky Games and The Legend of The Interactive Button"
-author: 64 Evil Hambuger
+author: 64 Evil Hamburger
 type: "youtube"
 video: "WnJ4YK7XHeI"
 category: documentaries
