@@ -125,6 +125,8 @@ function createMenu({
 
 	function updateFocus() {
 		let current = items[i];
+
+		if (!current) return;
 		current.focus({ focusVisible: true });
 		onFocus(current);
 	}
