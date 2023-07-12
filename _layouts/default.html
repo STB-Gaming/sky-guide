@@ -9,6 +9,13 @@ layout: null
 	{% for css in page.css %}
 	<link rel="stylesheet" href="{{site.url}}/assets/css/{{css}}">
 	{% endfor %}
+
+	{% capture seo %}{% seo %}{% endcapture %}
+	{% if page.image and page.image != site.logo %}
+	{{seo | replace: "summary", "summary_large_image"}}
+	{% else %}
+	{{seo}}
+	{% endif %}
 </head>
 
 <body>
