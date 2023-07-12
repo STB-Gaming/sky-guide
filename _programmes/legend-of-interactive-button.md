@@ -4,4 +4,5 @@ channel: 64 Evil Hambuger
 type: "youtube"
 video: "WnJ4YK7XHeI"
 category: documentaries
+image: https://img.youtube.com/vi/WnJ4YK7XHeI/maxresdefault.jpg
 ---
