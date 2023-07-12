@@ -23,42 +23,42 @@ type: menu/guide
 
 
 {% if include.collection %}
-	{% assign collectionItems = site[include.collection] %}
+{% assign collectionItems = site[include.collection] %}
 {% endif %}
 
 {% assign items = "" | split: "" %}
 
 {% if include.items %}
-	{% for item in include.items %}
-		{% assign siteItem = collectionItems | where:"url", item.url | first %}
-		{% if siteItem and siteItem.url %}
-			{% assign items = items | push: siteItem %}
-		{% else %}
-			{% assign items = items | push: item %}
-		{% endif %}
-	{% endfor %}
+{% for item in include.items %}
+{% assign siteItem = collectionItems | where:"url", item.url | first %}
+{% if siteItem and siteItem.url %}
+{% assign items = items | push: siteItem %}
 {% else %}
-	{% assign items = collectionItems %}
+{% assign items = items | push: item %}
+{% endif %}
+{% endfor %}
+{% else %}
+{% assign items = collectionItems %}
 {% endif %}
 
 {% if include.filter %}
-	{% assign items = items | where_exp:"item",include.filter %}
+{% assign items = items | where_exp:"item",include.filter %}
 {% endif %}
 
 {% if include.type == "guide" %}
 {% assign items = items | sort: "channel" %}
 {% endif %}
 
-<div class="{% if include.type == "guide" %}tv-guide{% else %}menu{% endif %}">
+<div class="{% if include.type == " guide" %}tv-guide{% else %}menu{% endif %}">
 	{% assign channel = "" %}
 	{% for item in items %}
-		{% if include.type == "guide" %}
-			{% if channel != item.channel %}
-			{% assign channel = item.channel %}
-			<span class="channel-end"></span>
-			<span class="channel">{{ channel }}</span>
-			{% endif %}
-		{% endif %}
-		<a href="{{item.url}}">{{item.title}}</a>
+	{% if include.type == "guide" %}
+	{% if channel != item.author %}
+	{% assign channel = item.author %}
+	<span class="channel-end"></span>
+	<span class="channel">{{ channel }}</span>
+	{% endif %}
+	{% endif %}
+	<a href="{{item.url}}">{{item.title}}</a>
 	{% endfor %}
 </div>

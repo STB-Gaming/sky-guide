@@ -2,6 +2,6 @@
 title: Sky Games
 type: local
 video: sky-games.mp4
-channel: 999 Sky
+author: 999 Sky
 category: sky
 ---
