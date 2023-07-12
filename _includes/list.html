@@ -46,7 +46,7 @@ type: menu/guide
 {% endif %}
 
 {% if include.type == "guide" %}
-{% assign items = items | sort: "channel" %}
+{% assign items = items | sort: "author" %}
 {% endif %}
 
 <div class="{% if include.type == 'guide' %}tv-guide{% else %}menu{% endif %}">
