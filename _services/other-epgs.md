@@ -4,7 +4,7 @@ list:
   items:
   - title: Old Digibox - Sky Web EPG
     url: https://olddigibox.github.io/sky-web-epg/
-  - title: S+WS - David Wheatly
+  - title: S+WS - David Wheatley
     url: https://sky-epg.davwheat.dev/
 ---
 # FOR YOUR INFORMATION
