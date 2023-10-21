@@ -13,6 +13,10 @@ list:
     url: https://stb-gaming.github.io/sky-games/menus/open-games-1999/
   - title: Sky Games
     url: https://stb-gaming.github.io/sky-games/menus/sky-games-2007/
+  - title: High Scores
+    url: https://stb-gaming.github.io/high-scores
+  - title: Sky Games Portal
+    url: https://stb-gaming.github.io/portal
 js:
  - interactive.js
 ---
